@@ -1,33 +1,33 @@
-# Blake's Bitcoin Blocks
+# Tiny Stamper
 
-Simple landing page for Blake's Bitcoin side hustle — selling 3D printed seed phrase stamping blocks.
+Simple landing page for a kid's Bitcoin side hustle — selling 3D printed seed phrase stamping blocks.
 
 ## Setup
 
 ### 1. Create GitHub Repo
 
 ```bash
-cd blakes-bitcoin-blocks
+cd tiny-stamper
 git init
 git add .
-git commit -m "Initial commit: Blake's Bitcoin Blocks landing page"
-gh repo create blakes-bitcoin-blocks --public --source=. --push
+git commit -m "Initial commit: Tiny Stamper landing page"
+gh repo create tiny-stamper --private --source=. --push
 ```
 
 ### 2. Enable GitHub Pages
 
 1. Go to: **Settings → Pages**
 2. Source: **Deploy from a branch**
-3. Branch: **main** (or **gh-pages**)
+3. Branch: **main** (or **master**)
 4. Save
 
-Your site will be live at: `https://YOURUSER.github.io/blakes-bitcoin-blocks/`
+Your site will be live at: `https://YOURUSER.github.io/tiny-stamper/`
 
-### 3. Custom Subdomain (blocks.bitcoin.com.au)
+### 3. Custom Subdomain (stamps.bitcoin.com.au)
 
 ```bash
-# Create CNAME file with YOUR subdomain
-echo "blocks.bitcoin.com.au" > CNAME
+# Create CNAME file with your subdomain
+echo "stamps.bitcoin.com.au" > CNAME
 git add CNAME
 git commit -m "Add custom subdomain"
 git push
@@ -37,7 +37,7 @@ Then configure DNS at **Bitcoin.com.au**:
 
 | Type | Name | Value |
 |------|------|-------|
-| CNAME | blocks | YOURUSER.github.io. |
+| CNAME | stamps | YOURUSER.github.io. |
 
 *(Note: trailing dot is important)*
 
@@ -45,27 +45,35 @@ Then configure DNS at **Bitcoin.com.au**:
 
 | Type | Name | Value |
 |------|------|-------|
-| A | blocks | 185.199.108.153 |
-| A | blocks | 185.199.109.153 |
-| A | blocks | 185.199.110.153 |
-| A | blocks | 185.199.111.153 |
+| A | stamps | 185.199.108.153 |
+| A | stamps | 185.199.109.153 |
+| A | stamps | 185.199.110.153 |
+| A | stamps | 185.199.111.153 |
 
-Wait ~1 hour for DNS to propagate, then visit: **https://blocks.bitcoin.com.au**
+Wait ~1 hour for DNS to propagate, then visit: **https://stamps.bitcoin.com.au**
 
-### 4. Customize
+### 4. Customize Before Launch
 
-- **Video:** Replace the video placeholder div with your YouTube embed
-- **QR Codes:** Generate real Lightning/on-chain QR codes
-- **Telegram Link:** Update the Telegram group link
-- **Prices:** Update BTC price range if needed
+| Task | File |
+|------|------|
+| YouTube embed | `index.html` |
+| Lightning QR | `index.html` |
+| On-chain QR | `index.html` |
+| Telegram link | `index.html` |
+
+**Generate QR codes:**
+- Use **lnurlp** or **Lightningaddress.com** for Lightning QR
+- Use your wallet for on-chain QR
 
 ## Files
 
 - `index.html` — Main landing page
-- `CNAME` — Custom domain (optional)
+- `CNAME` — Custom subdomain
+- `README.md` — Setup instructions
 
 ## Tech
 
 - Tailwind CSS via CDN (no build step)
 - Mobile-friendly
 - Bitcoin orange theme
+- Privacy-focused (no personal names publicly)
